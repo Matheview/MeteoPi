@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="615.0" prefWidth="1243.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="meteoapp.FXMLDocumentController">
+  <children>
+    <SplitPane dividerPositions="0.1861402095084609" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #222;" VBox.vgrow="ALWAYS">
+      <items>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="576.0" prefWidth="930.0" style="-fx-background-color: #f2f2f2;">
+        <children>
+          <Label fx:id="label_place" alignment="TOP_LEFT" layoutX="24.0" layoutY="40.0" prefHeight="35.0" prefWidth="577.0" style="&#10;" text="Rzeszów, 50.030262&quot;N, 22.014317&quot;E" textAlignment="CENTER" textFill="#656565" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="22.0" layoutY="136.0" style="&#10;" text="temperatura:" textAlignment="CENTER" textFill="#868686" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x11" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="22.0" layoutY="203.0" prefHeight="27.0" prefWidth="109.0" style="&#10;" text="wilgotność:" textAlignment="CENTER" textFill="#868686" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x111" />
+                     </font>
+                  </Label>
+                  <Button fx:id="back_arrow" layoutX="348.0" layoutY="555.0" mnemonicParsing="false" onAction="#backArrowOnAction" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #0080FF;" text="&lt;&lt;" />
+                  <Button fx:id="foward_arrow" layoutX="610.0" layoutY="555.0" mnemonicParsing="false" onAction="#fowardArrowOnAction" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #0080FF;" text="&gt;&gt;" />
+                  <Button fx:id="reset_button" layoutX="479.0" layoutY="555.0" mnemonicParsing="false" onAction="#resetButtonOnAction" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #0080FF;" text="reset" />
+                  <Label fx:id="label_temperature" layoutX="131.0" layoutY="107.0" prefHeight="69.0" prefWidth="147.0" style="-fx-font: 36px arial,helvetica,sans-serif;" text="-15°C" textAlignment="CENTER" textFill="#6f6f6f" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="52.0" fx:id="x113" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_humidity" layoutX="122.0" layoutY="175.0" prefHeight="69.0" prefWidth="131.0" style="-fx-font: 36px arial,helvetica,sans-serif;" text="70" textAlignment="CENTER" textFill="#6f6f6f" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="52.0" fx:id="x1131" />
+                     </font>
+                  </Label>
+                  <Label layoutX="322.0" layoutY="136.0" prefHeight="27.0" prefWidth="159.0" style="&#10;" text="prędkość wiatru:" textAlignment="CENTER" textFill="#868686" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x112" />
+                     </font>
+                  </Label>
+                  <Label layoutX="322.0" layoutY="204.0" prefHeight="27.0" prefWidth="137.0" style="&#10;" text="kierunek wiatru:" textAlignment="CENTER" textFill="#868686" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x1111" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_wind_speed" layoutX="459.0" layoutY="107.0" prefHeight="69.0" prefWidth="147.0" style="-fx-font: 36px arial,helvetica,sans-serif;" text="-15°C" textAlignment="CENTER" textFill="#6f6f6f" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="52.0" fx:id="x1132" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_wind_direction" layoutX="456.0" layoutY="176.0" prefHeight="69.0" prefWidth="131.0" style="-fx-font: 36px arial,helvetica,sans-serif;" text="N" textAlignment="CENTER" textFill="#6f6f6f" wrapText="false">
+                     <font>
+                        <Font name="System Bold" size="52.0" fx:id="x11311" />
+                     </font>
+                  </Label>
+                  <Button fx:id="autoreloading" layoutX="788.0" layoutY="213.0" mnemonicParsing="false" onAction="#autoreloadingOnAction" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: #0080FF;" text="Odśwież" />
+                  <AreaChart fx:id="line_charts" layoutX="22.0" layoutY="262.0" prefHeight="285.0" prefWidth="908.0">
+                    <xAxis>
+                      <CategoryAxis prefHeight="25.0" prefWidth="850.0" side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+        </children>
+      </AnchorPane>
+        <AnchorPane prefHeight="731.0" prefWidth="369.0" style="-fx-background-color: #f2f2f2;">
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Lokalizacja" textAlignment="CENTER" textFill="#868686" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+            </Label>
+                  <ComboBox fx:id="combobox_location" layoutX="14.0" layoutY="50.0" onAction="#comboboxLocationOnAction" prefHeight="25.0" prefWidth="198.0" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="101.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Rodzaj danych" textAlignment="CENTER" textFill="#868686" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x12" />
+                     </font>
+                  </Label>
+                  <Button fx:id="temp_button" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#tempbuttonOnAction" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #0080FF;" text="temperatura" />
+                  <Button fx:id="humi_button" layoutX="15.0" layoutY="184.0" mnemonicParsing="false" onAction="#humibuttonOnAction" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #0080FF;" text="wilgotność" />
+                  <Button fx:id="winds_button" layoutX="15.0" layoutY="224.0" mnemonicParsing="false" onAction="#windsOnAction" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #0080FF;" text="prędkość wiatru" />
+          </children>
+               <effect>
+                  <Blend />
+               </effect>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="1199.0" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Pane prefHeight="24.0" prefWidth="1237.0" style="-fx-background-color: #f2f2f2;" HBox.hgrow="ALWAYS">
+               <children>
+              <Label layoutX="1032.0" layoutY="1.0" maxWidth="-1.0" prefHeight="16.0" prefWidth="109.0" text="Ostatnia aktualizacja:">
+                     <font>
+                        <Font size="11.0" fx:id="x42" />
+                     </font>
+                     <textFill>
+                        <Color blue="0.625" green="0.625" red="0.625" fx:id="x43" />
+                     </textFill>
+                  </Label>
+                  <Label fx:id="label_updated_last" layoutX="1141.0" layoutY="1.0" maxWidth="-1.0" prefHeight="16.0" prefWidth="109.0" text="2018-01-10 03:12:48">
+                     <font>
+                        <Font size="11.0" fx:id="x31" />
+                     </font>
+                     <textFill>
+                        <Color blue="0.625" green="0.625" red="0.625" fx:id="x41" />
+                     </textFill>
+                  </Label>
+              <Label fx:id="label_status" layoutX="32.0" layoutY="1.0" maxHeight="1.7976931348623157E308" maxWidth="-1.0" prefHeight="16.0" prefWidth="47.0" text="offline">
+                <font>
+                  <Font size="11.0" fx:id="x3" />
+                </font>
+                <textFill>
+                  <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+                </textFill>
+              </Label>
+                  <Circle fx:id="circle_status" fill="#14cc00" layoutX="19.0" layoutY="9.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+               </children></Pane>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

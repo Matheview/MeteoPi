@@ -231,7 +231,7 @@ Przycisk `Odśwież` służy do pobrania najnowszych danych oraz aktualizację t
 
 #Dodatkowe linki
 
-[MeteoPi - odczyty danych pogodowych](http://meteopi.vot.pl/) - we współpracy z @Fyrrj
+[MeteoPi - odczyty danych pogodowych](http://meteopi.vot.pl/) - we współpracy z [@Fyrrj](https://github.com/Fyrrj)
 
 
 

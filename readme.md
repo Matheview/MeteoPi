@@ -229,8 +229,7 @@ gdzie w miejscach pytajników umieszczamy symbol interesującego nas urządzenia
 W pozycji Lokalizacja znajdują się 2 urządzenia, wybór odpowiedniego spowoduje, automatyczne pobranie najświeższych zarejestrowanych danych przez urządzenie. Informacja o ostatniej aktualizacji znajduje się w prawym dolnym rogu panelu, gdzie zapisana jest data i godzina ostatniej aktualizacji.
 Przycisk `Odśwież` służy do pobrania najnowszych danych oraz aktualizację tabeli. Przyciski `<<` oraz `>>` służą do poruszania się do przodu i do tyłu względem osi czasu. Przycisk `reset` służy do pobrania z powrotem najnowszych danych.
 
-#Dodatkowe linki
-
+# Dodatkowe linki
 [MeteoPi - odczyty danych pogodowych](http://meteopi.vot.pl/) - we współpracy z [@Fyrrj](https://github.com/Fyrrj)
 
 

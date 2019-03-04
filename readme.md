@@ -1,6 +1,25 @@
 # MeteoPi
 ![meteopi](img/materials/logo.png?raw=true "MeteoPi")<br />
 MeteoPi jest niskobudżetowym systemem pomiaru temperatury, wilgotności powietrza, oraz prędkości i kierunku wiatru opartym na popularnych minikomputerach Raspberry Pi 3 i języka Java.
+# Spis treści
+  - [Meteopi](#meteopi)
+    - [Technologia](#technologia)
+    - [Elektronika](#elektronika)
+    - [Pozostałe elementy](#pozostałe-elementy)
+  - [Urządzenie pomiarowe](#urządzenie-pomiarowe)
+    - [Konfiguracja systemu](#konfiguracja-systemu)
+    - [Podłączenie elektroniki](#podłączenie-elektroniki)
+    - [Obudowa](#obudowa)
+  - [PostgreSQL](#postgresql)
+  - [Aplikacja na urządzenie Raspberry Pi 3](#aplikacja-na-urządzenie-raspberry-pi-3)
+    - [Tworzenie klas](#tworzenie-klas)
+    - [Pomiar prędkości i kierunku wiatru](#pomiar-prędkości-i-kierunku-wiatru)
+    - [Pomiar temperatury i wilgotności](#pomiar-temperatury-i-wilgotnosci)
+    - [JDBC - wysyłanie wyników](#jdbc---wysyłanie-wyników)
+  - [JavaFX](#javafx)
+    - [Wygląd interfejsu](#wygląd-interfejsu)
+  - [Dodatkowe linki](#dodatkowe-linki)
+  - [Updates](#updates)
 
 ## Technologia
   - [Raspberry Pi 3](https://botland.com.pl/pl/moduly-i-zestawy-raspberry-pi-3/5576-raspberry-pi-3-model-b-wifi-bluetooth-1gb-ram-12ghz-640522710850.html)
@@ -64,7 +83,7 @@ Po restarcie system będzie próbował uruchomić plik `meteomobi.jar`. Po zako�
 ```sh
 sudo reboot
 ```
-### Elektronika
+### Podłączenie elektroniki
 Podpinamy wszystkie elementy do Raspberry Pi według poniższego schematu `GPIO` zostały podane według standardu przyjętego przez bibliotekę [Pi4J](http://pi4j.com/pins/model-b-plus.html):
 ![connect_scheme](img/materials/connect_scheme.png?raw=true "Connection")
 
@@ -230,12 +249,10 @@ W pozycji Lokalizacja znajdują się 2 urządzenia, wybór odpowiedniego spowodu
 Przycisk `Odśwież` służy do pobrania najnowszych danych oraz aktualizację tabeli. Przyciski `<<` oraz `>>` służą do poruszania się do przodu i do tyłu względem osi czasu. Przycisk `reset` służy do pobrania z powrotem najnowszych danych.
 
 # Dodatkowe linki
-[MeteoPi - odczyty danych pogodowych](http://meteopi.vot.pl/) - we współpracy z [@Fyrrj](https://github.com/Fyrrj)
+[MeteoPi - odczyty danych pogodowych](http://meteopi.vot.pl/) - we współpracy z [@Fyrrj](https://github.com/Fyrrj) w ramach zaliczenia przedmiotu Technologie Internetowe
 
-### Update
+### Updates
 29.01.2019 - stacje zakończyły I fazę testów
-
-
 
 
 
